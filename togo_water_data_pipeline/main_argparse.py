@@ -27,6 +27,7 @@ def main():
         3. "old_items"       | old items
         4. "recruit_profile" | recruitment profile
         5. "recruit_items"   | recruitment items
+        6. "supplier_profile"| source of supply
 
         Date convention
         ===============
@@ -56,7 +57,7 @@ def main():
     # Load up json file and extract details
     with open("credentials_2.json", "r") as json_file: # alter credential files here
         loaded_credentials = json.load(json_file)
-    api_key = 'f803b1f2-486e-4de7-9e6c-faa45366bb28'
+    api_key = 'paste here'
     username = loaded_credentials["username"]
     password = loaded_credentials["password"]
     recruit_survey_id = loaded_credentials["recruitment_survey"]
@@ -68,7 +69,6 @@ def main():
     audit_survey_id = loaded_credentials["audit_survey"]
 
     # Connection to MySQL Engine
-    # my_conn = create_engine("mysql+mysqldb://root:T0pGunMaver123@localhost/maverick_db")
     my_conn = create_engine(f"mysql+mysqldb://{sql_user}:{sql_pass}@{sql_host}:{sql_port}/{sql_database}")
 
     # Setup parser arguments
@@ -90,7 +90,6 @@ def main():
             try:
                 general = DownloadDetails()
                 audit = AuditCaptureDetails()
-                #new_list = ['219493555']#, 219496182]
                 new_list = general.get_store_id(api_key, username, password, audit_survey_id, found_date) # get store ids for given period, returns a list of store ids
                 for outlet in new_list: # iterate through ids, transform their data and append them to a big list
                     dataframe_return = audit.transform_audit_capture_profile(outlet, audit_survey_id, api_key, username, password)
