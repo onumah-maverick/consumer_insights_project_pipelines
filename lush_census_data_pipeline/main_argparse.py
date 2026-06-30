@@ -57,7 +57,7 @@ def main():
     # Load up json file and extract details
     with open("credentials_2.json", "r") as json_file: # alter credential files here
         loaded_credentials = json.load(json_file)
-    api_key = 'f803b1f2-486e-4de7-9e6c-faa45366bb28'
+    api_key = 'paste here'
     username = loaded_credentials["username"]
     password = loaded_credentials["password"]
     recruit_survey_id = loaded_credentials["recruitment_survey"]
