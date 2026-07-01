@@ -1,11 +1,8 @@
-# consumer_insights_project_pipelines
-This repository contains the different pipeline scripts used to facilitate data fetch in some CI projects.
-
 # STG Data Extraction Pipelines
 
 ## Overview
 
-This repository contains a collection of Python-based ETL (Extract, Transform, Load) pipelines developed to retrieve survey data from the **STG (Dooblo)** platform for various Maverick Research projects.
+This repository contains a collection of Python-based ETL (Extract, Transform, Load) pipelines developed to retrieve survey data from the **STG (Dooblo)** platform for various Consumer Insights projects.
 
 Although each project targets a different survey and client, all pipelines follow the same core architecture:
 
