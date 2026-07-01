@@ -95,7 +95,7 @@ Most projects consist of the following files.
 
 # Core Components
 
-## Download Layer
+## Extraction Layer
 
 The `DownloadDetails` class is responsible for communication with the STG API.
 
